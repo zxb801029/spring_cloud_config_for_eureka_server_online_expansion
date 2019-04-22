@@ -1,0 +1,20 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
+#      defaultZone: http://localhost:1112/eureka/ # 此处改为第二个eureka-server地址
+      defaultZone: http://localhost:1112/eureka/,http://localhost:1113/eureka/ # 此处改为包含三个eureka-server
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+      enableSelfPreservation: false

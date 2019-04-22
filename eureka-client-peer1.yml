@@ -1,0 +1,13 @@
+server:
+  port: 1114
+
+spring:
+  application:
+    name: eureka-client
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/ # one eureka server
+#      defaultZone: http://localhost:1111/eureka/,http://localhost:1112/eureka/ # 此处改为包含两个eureka-server
+      defaultZone: http://localhost:1111/eureka/,http://localhost:1112/eureka/,http://localhost:1113/eureka/ # 此处改为包含三个eureka-server
